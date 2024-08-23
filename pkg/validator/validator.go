@@ -9,7 +9,7 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	enTranslations "github.com/go-playground/validator/v10/translations/en"
-	"github.com/walterwong1001/common_libs/enum/httpmethod"
+	"github.com/walterwong1001/gin_common_libs/enum/httpmethod"
 )
 
 var Translator ut.Translator

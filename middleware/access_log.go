@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	accesslog "github.com/walterwong1001/common_libs/pkg/access_log"
+	accesslog "github.com/walterwong1001/gin_common_libs/pkg/access_log"
 )
 
 func AccessLog(logger accesslog.Logger) gin.HandlerFunc {

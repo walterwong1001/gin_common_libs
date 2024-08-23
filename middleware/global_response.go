@@ -7,8 +7,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/walterwong1001/common_libs/pkg/response"
-	vl "github.com/walterwong1001/common_libs/pkg/validator"
+	"github.com/walterwong1001/gin_common_libs/pkg/response"
+	vl "github.com/walterwong1001/gin_common_libs/pkg/validator"
 )
 
 // GlobalResponse 全局统一响应Handler
