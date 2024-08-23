@@ -1,4 +1,4 @@
-module github.com/weitien/common_libs
+module github.com/walterwong1001/common_libs
 
 go 1.21.5
 
