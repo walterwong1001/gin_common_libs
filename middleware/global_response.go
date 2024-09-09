@@ -2,13 +2,13 @@ package middleware
 
 import (
 	"errors"
+	"github.com/walterwong1001/gin_common_libs/response"
+	vl "github.com/walterwong1001/gin_common_libs/validator"
 	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/walterwong1001/gin_common_libs/pkg/response"
-	vl "github.com/walterwong1001/gin_common_libs/pkg/validator"
 )
 
 // GlobalResponse 全局统一响应Handler

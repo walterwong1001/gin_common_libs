@@ -1,21 +1,18 @@
-package handlers
+package endpoints
 
 import (
 	"context"
 	"errors"
+	"github.com/walterwong1001/gin_common_libs/page"
+	"github.com/walterwong1001/gin_common_libs/response"
 	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/walterwong1001/gin_common_libs/pkg/page"
-	"github.com/walterwong1001/gin_common_libs/pkg/response"
 )
 
 type PaginationHelper[T, S any] interface {
 	Pagination(ctx context.Context, p page.Paginator[T], filter S) error
-}
-
-type AbstractHandler struct {
 }
 
 func PathParamAsInt(c *gin.Context, key string) (uint64, error) {

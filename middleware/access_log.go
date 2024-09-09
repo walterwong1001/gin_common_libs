@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/walterwong1001/gin_common_libs/access_log"
 	"io"
 	"time"
 
 	"github.com/gin-gonic/gin"
-	accesslog "github.com/walterwong1001/gin_common_libs/pkg/access_log"
 )
 
 func AccessLog(logger accesslog.Logger) gin.HandlerFunc {
@@ -61,7 +61,7 @@ func AccessLog(logger accesslog.Logger) gin.HandlerFunc {
 			metrics["request_body"] = compressBody(requestBody)
 		}
 
-		logger.Log(ctx, metrics)
+		_ = logger.Log(ctx, metrics)
 	}
 }
 
