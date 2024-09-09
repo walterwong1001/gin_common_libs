@@ -1,7 +1,6 @@
 package endpoints
 
 import (
-	"context"
 	"errors"
 	"github.com/walterwong1001/gin_common_libs/page"
 	"github.com/walterwong1001/gin_common_libs/response"
@@ -10,10 +9,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-
-type PaginationHelper[T, S any] interface {
-	Pagination(ctx context.Context, p page.Paginator[T], filter S) error
-}
 
 func PathParamAsInt(c *gin.Context, key string) (uint64, error) {
 	return strconv.ParseUint(c.Param(key), 10, 64)
@@ -65,7 +60,7 @@ func QueryParams[T any](c *gin.Context) (T, error) {
 }
 
 // Pagination 抽象分页逻辑
-func Pagination[T, F any](c *gin.Context, helper PaginationHelper[T, F], callback func(c *gin.Context, p page.Paginator[T]) any) {
+func Pagination[T, F any](c *gin.Context, helper page.PaginationHelper[T, F], callback func(c *gin.Context, p page.Paginator[T]) any) {
 	// 分页信息
 	p, err := Paginator[T](c)
 	if err != nil {

@@ -1,5 +1,11 @@
 package page
 
+import "context"
+
+type PaginationHelper[T, S any] interface {
+	Pagination(ctx context.Context, p Paginator[T], filter S) error
+}
+
 // Paginator defines the interface for pagination operations.
 type Paginator[T any] interface {
 	GetCurrent() int
